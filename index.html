@@ -1,327 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <title>Trading With Karol</title>
-
-  <!-- Meta Pixel Code
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-  </script>
-  -->
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #172033;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
-      padding: 35px 22px 25px;
-      text-align: center;
-    }
-
-    /* PROFILE */
-    .profile {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 7px solid #2450ff;
-      box-shadow: 0 8px 25px rgba(36,80,255,.22);
-      display: block;
-      margin: 10px auto 45px;
-    }
-
-    /* LIVE BADGE */
-    .live {
-      position: relative;
-      display: inline-block;
-    }
-
-    .live span {
-      position: absolute;
-      right: -12px;
-      bottom: 5px;
-      background: #ff5454;
-      color: white;
-      font-weight: 800;
-      padding: 10px 19px;
-      border-radius: 25px;
-      font-size: 18px;
-      box-shadow: 0 7px 16px rgba(255,84,84,.25);
-    }
-
-    /* BLUE LABEL */
-    .label {
-      background: linear-gradient(90deg,#2148ff,#2865e8);
-      color: white;
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      padding: 17px 15px;
-      border-radius: 40px;
-      margin-bottom: 35px;
-      box-shadow: 0 8px 22px rgba(37,81,255,.20);
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 35px;
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
-
-    .verified {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 28px;
-      height: 28px;
-      background: #239fe8;
-      color: white;
-      border-radius: 50%;
-      font-family: Arial;
-      font-size: 18px;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-
-    .subtitle {
-      color: #687b98;
-      font-size: 25px;
-      line-height: 1.55;
-      margin-bottom: 55px;
-    }
-
-    /* TELEGRAM BUTTON */
-    .telegram-btn {
-      display: block;
-      text-decoration: none;
-      background: linear-gradient(90deg,#20c45b,#13ad4d);
-      color: white;
-      font-size: 25px;
-      font-weight: 800;
-      padding: 25px 15px;
-      border-radius: 34px;
-      margin-bottom: 50px;
-      box-shadow: 0 8px 20px rgba(20,190,80,.18);
-      transition: .2s;
-    }
-
-    .telegram-btn:active {
-      transform: scale(.98);
-    }
-
-    /* FEATURES */
-    .feature {
-      display: flex;
-      align-items: center;
-      text-align: left;
-      border: 2px solid #e0e7f0;
-      background: #fbfcfe;
-      border-radius: 28px;
-      padding: 25px 27px;
-      margin-bottom: 28px;
-      font-size: 22px;
-      font-weight: 700;
-      color: #35455d;
-    }
-
-    .icon {
-      font-size: 27px;
-      width: 45px;
-      flex-shrink: 0;
-    }
-
-    /* DISCLAIMER */
-    .line {
-      border-top: 2px dashed #ccd6e5;
-      margin-top: 75px;
-      padding-top: 40px;
-    }
-
-    .disclaimer {
-      text-align: left;
-      color: #71839f;
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    /* AGENCY */
-    .agency {
-      margin-top: 38px;
-      padding-top: 25px;
-      border-top: 1px solid #e6ebf2;
-      font-size: 16px;
-      color: #8a9bb5;
-    }
-
-    .agency a {
-      color: #2450ff;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .copyright {
-      margin-top: 28px;
-      color: #9aabc1;
-      font-family: Georgia, serif;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* MOBILE */
-    @media(max-width: 480px) {
-
-      .container {
-        padding: 25px 18px 20px;
-      }
-
-      .profile {
-        width: 165px;
-        height: 165px;
-        margin-bottom: 42px;
-      }
-
-      .live span {
-        font-size: 15px;
-        padding: 8px 14px;
-      }
-
-      .label {
-        font-size: 18px;
-        letter-spacing: 3px;
-        padding: 15px 10px;
-      }
-
-      h1 {
-        font-size: 29px;
-      }
-
-      .subtitle {
-        font-size: 20px;
-        margin-bottom: 42px;
-      }
-
-      .telegram-btn {
-        font-size: 20px;
-        padding: 22px 10px;
-        border-radius: 28px;
-        margin-bottom: 40px;
-      }
-
-      .feature {
-        font-size: 18px;
-        padding: 22px 18px;
-        border-radius: 22px;
-        margin-bottom: 20px;
-      }
-
-      .disclaimer {
-        font-size: 15px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Academy</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ background:radial-gradient(circle at top,#123d32,#07110f 65%);
+ color:white;font-family:Arial,sans-serif;
+ display:flex;justify-content:center;align-items:center;
+ padding:12px;
+}
+.container{
+ width:100%;max-width:390px;
+ min-height:calc(100svh - 24px);
+ max-height:850px;
+ border:1px solid #28664f;
+ border-radius:25px;
+ padding:22px 18px 14px;
+ text-align:center;
+ display:flex;flex-direction:column;
+ justify-content:space-between;
+ background:linear-gradient(160deg,#10271f,#07100e);
+ box-shadow:0 0 35px #00d68a20;
+}
+.logo{
+ width:100px;height:100px;border-radius:50%;
+ object-fit:cover;border:3px solid #26d99a;
+ box-shadow:0 0 20px #26d99a55;
+}
+h1{font-size:25px;margin:12px 0 5px}
+.sub{color:#a9c9bb;font-size:13px;line-height:1.5}
+.join{
+ display:block;margin:15px auto 12px;
+ background:linear-gradient(90deg,#00b978,#20e5a0);
+ color:#06140e;text-decoration:none;
+ font-weight:800;padding:15px;border-radius:12px;
+ letter-spacing:1px;
+}
+.tag{color:#48dfa9;font-size:11px;letter-spacing:2px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}
+.card{
+ border:1px solid #245541;background:#10251e;
+ padding:12px 7px;border-radius:13px;
+}
+.card b{display:block;color:#48dfa9;font-size:14px;margin-bottom:5px}
+.card span{font-size:11px;color:#b7c9c1}
+.note{font-size:11px;color:#9db4aa;line-height:1.5;margin:8px 0}
+.links{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+.links a{font-size:11px;color:#b7d8ca;text-decoration:none}
+.footer{
+ margin-top:13px;padding:12px 8px;
+ border:1px solid #c59b40;border-radius:10px;
+ background:#30240e;
+}
+.footer a{color:#ffd46b;font-weight:800;
+ text-decoration:none;font-size:12px;letter-spacing:1px}
+@media(max-height:650px){
+ .container{padding:12px}
+ .logo{width:75px;height:75px}
+ .cards{margin:6px 0}
+ .join{margin:8px auto;padding:12px}
+}
+</style>
 </head>
-
 <body>
+<main class="container">
+ <div>
+  <div class="tag">LEARN • UNDERSTAND • GROW</div>
+  <img src="logo.png" class="logo" alt="Profile Logo">
+  <h1>MARKET ACADEMY</h1>
+  <div class="sub">Explore the stock market with simple educational resources.</div>
 
-  <div class="container">
+  <a class="join" href="https://t.me/YOUR_TELEGRAM">
+   JOIN TELEGRAM →
+  </a>
 
-    <!-- PROFILE PHOTO -->
-    <div class="live">
-      <img src="profile.jpg" class="profile" alt="Trading Profile">
-      <span>LIVE</span>
-    </div>
-
-    <!-- TOP LABEL -->
-    <div class="label">
-      TRADING COMMUNITY
-    </div>
-
-    <!-- TITLE -->
-    <h1>
-      TRADING WITH KAROL
-      <span class="verified">✓</span>
-    </h1>
-
-    <p class="subtitle">
-      Mastering Index Trading &amp; Price Action<br>
-      with Simplicity.
-    </p>
-
-    <!-- TELEGRAM BUTTON -->
-    <a href="https://t.me/yourtelegram"
-       class="telegram-btn"
-       target="_blank">
-      🚀 &nbsp; JOIN FREE TELEGRAM
-    </a>
-
-    <!-- FEATURES -->
-    <div class="feature">
-      <span class="icon">📈</span>
-      <span>Live Index Market Analysis</span>
-    </div>
-
-    <div class="feature">
-      <span class="icon">💡</span>
-      <span>Simple Price Action Strategy</span>
-    </div>
-
-    <div class="feature">
-      <span class="icon">🛡️</span>
-      <span>SEBI Registered Entity</span>
-    </div>
-
-    <!-- DISCLAIMER -->
-    <div class="line">
-      <p class="disclaimer">
-        Disclaimer: Investment in securities market are subject to market
-        risks. Read all the related documents carefully before investing.
-        Registration granted by SEBI and certification from NISM in no way
-        guarantee performance of the intermediary or provide any assurance
-        of returns to investors. All content shared is for educational and
-        informational purposes only.
-      </p>
-    </div>
-
-    <!-- ADS MANAGE BY -->
-    <div class="agency">
-      Ads Manage By
-      <a href="https://t.me/+nTRMAouerik1ZGY1" target="_blank">
-        Adsbig Agency
-      </a>
-    </div>
-
-    <div class="copyright">
-      TRADING WITH KAROL · © 2026
-    </div>
-
+  <div class="cards">
+   <div class="card">
+    <b>MARKET BASICS</b>
+    <span>Understand market concepts</span>
+   </div>
+   <div class="card">
+    <b>LEARNING</b>
+    <span>Build financial knowledge</span>
+   </div>
+   <div class="card">
+    <b>ANALYSIS</b>
+    <span>Learn research concepts</span>
+   </div>
+   <div class="card">
+    <b>RISK AWARENESS</b>
+    <span>Understand market risks</span>
+   </div>
   </div>
 
+  <p class="note">
+   Educational content only. No guaranteed returns,
+   investment advice or buy/sell recommendations.
+  </p>
+ </div>
+
+ <div>
+  <nav class="links">
+   <a href="content.html">Content</a>
+   <a href="disclaimer.html">Disclaimer</a>
+   <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <div class="footer">
+   <a href="https://t.me/YOUR_SNOWADS_TELEGRAM">
+    AD MANAGE BY SNOWADS
+   </a>
+  </div>
+ </div>
+</main>
 </body>
 </html>
